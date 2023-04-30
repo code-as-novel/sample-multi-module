@@ -1,0 +1,4 @@
+rootProject.name = 'multi-project'
+
+include 'demo-db'
+include 'demo-service'

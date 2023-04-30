@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      TZ: Asia/Seoul
+    ports:
+      - 3306:3306
+  
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root123
+      TZ: Asia/Seoul
+    ports:
+      - 3307:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+networks:
+  default:
+    name: demo-network
+    external: true
